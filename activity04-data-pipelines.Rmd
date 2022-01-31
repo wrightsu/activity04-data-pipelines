@@ -69,6 +69,11 @@ I try to be consistent with notation so here are some other forms that you might
 # function comes from.
 
 college_recent_grads <- readr::read_csv("data/recent-grads.csv")
+
+college_recent_grads
+
+# Typical style once {tidyverse} is loaded:
+# college_recent_grads <- read_csv("data/recent-grads.csv")
 ```
 
 Notice that this dataset is in a folder called `data`.
@@ -82,49 +87,30 @@ Explore and describe what the `message` option does in `load_data` code chunk.
 
 Turn the `message` option off and continue in this activity.
 
-#### Asside
+#### Aside
 
 Base R has a function for reading in a csv file as well.
-Type the following in your **Console** pane, pressing Enter/Return at the end:
+First, knit this report and look at the output for the `load_data` code chunk.
+
+Now, edit the reading in data code in the `load_data` code chunk to instead be:
 
 ```
-temp <- read.csv("data/recent-grads.csv")
+college_recent_grads <- read.csv("data/recent-grads.csv")
 ```
 
-Pause and look at the lack of output/messaging.
+Then, knit this report and look at the output for the `load_data` code chunk.
+What did you notice about the output from these different functions? 
+When creating a report, which function would be better to use?
 
-Now type the following in your **Console** pane, pressing Enter/Return at the end:
-
-```
-temp
-```
-
-Pause and look at the output.
-You will probably need to scroll up a bit to see the beginning of it.
-
-Now type the following in your **Console** pane, pressing Enter/Return at the end:
+Now, edit the reading in data code in the `load_data` back to what is was originally:
 
 ```
-college_recent_grads
+college_recent_grads <- readr::read_csv("data/recent-grads.csv")
 ```
-
-Pause and look at the output.
-Compare this to your `temp` output.
 
 If you were to load the data using `read.csv` in an `.Rmd` file and try to view it, it will print the ENTIRE dataset - this could make a short report many hundreds of pages depending on the size of your dataset.
 Historically, there were some other benefits of `readr::read_csv` over `read.csv`, but these have mostly been updated to no longer be issues.
-I encourage you to use `readr::read_csv` instead of `read.csv`.
-
-## Quick Data View
-
-Below is a blank R code chunk.
-Name this code chunk `college_grads_top`; you do not need to suppress messages.
-In this code chunk, type `college_recent_grads` to view the top few (first 10) entries of the dataset.
-
-```{r}
-
-```
-
+I strongly recommend that you use `readr::read_csv` instead of `read.csv`.
 
 ![](README-img/noun_pause.png) **Planned Pause Point**: If you have any questions, contact your instructor. Otherwise feel free to continue on.
 
@@ -157,7 +143,7 @@ Descriptions of the variables are provided below.
 |`low_wage_jobs`                | Number in low-wage service jobs
 
 We can see that this data frame has a lot of useful information.
-In the remaining sections we will answer the following questions:
+In the remaining sections we will answer the following questions (I'll tell you what to do, you don't need to do anything yet):
 
 - Which major has the lowest unemployment rate?
 - Which major has the highest percentage of women?
@@ -205,7 +191,7 @@ Name this code chunk `lowest_unemploy`.
 **Response**:
 
 
-![](README-img/noun_pause.png) **Planned Pause Point**: If you have any questions, contact your instructor. Otherwise feel free to continue on.
+<img src="README-img/noun_pause.png" alt="pause" width = "20"/> <b>Planned Pause Point</b>: If you feel that you have a good understanding of these commands, feel free to start working on your project. The remainder of this activity will help to expand these commands.
 
 ### Which major has the highest proportion of women?
 
